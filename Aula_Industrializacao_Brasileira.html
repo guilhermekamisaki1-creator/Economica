@@ -1,0 +1,1167 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Aula Completa: Industrialização Brasileira</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;900&family=Source+Sans+Pro:wght@300;400;600;700&family=Fira+Code&display=swap" rel="stylesheet">
+<style>
+:root {
+  --primary: #1a3a2a;
+  --secondary: #2d6a4f;
+  --accent: #d4a373;
+  --accent2: #e76f51;
+  --light: #fefae0;
+  --cream: #f4f1de;
+  --dark: #0d1b0e;
+  --text: #2b2b2b;
+  --muted: #6b705c;
+  --highlight: #faedcd;
+  --blue: #264653;
+  --teal: #2a9d8f;
+  --yellow: #e9c46a;
+  --orange: #f4a261;
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+body {
+  font-family: 'Source Sans Pro', sans-serif;
+  background: var(--cream);
+  color: var(--text);
+  line-height: 1.8;
+  font-size: 17px;
+}
+
+/* HERO */
+.hero {
+  background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 40%, var(--blue) 100%);
+  color: white;
+  padding: 80px 40px;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+.hero::before {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: repeating-conic-gradient(from 0deg, rgba(255,255,255,0.02) 0deg 10deg, transparent 10deg 20deg);
+  animation: rotate 60s linear infinite;
+}
+@keyframes rotate { to { transform: rotate(360deg); } }
+.hero h1 {
+  font-family: 'Playfair Display', serif;
+  font-size: 3.2em;
+  font-weight: 900;
+  position: relative;
+  z-index: 1;
+  letter-spacing: -1px;
+}
+.hero .subtitle {
+  font-size: 1.3em;
+  font-weight: 300;
+  margin-top: 12px;
+  opacity: 0.9;
+  position: relative;
+  z-index: 1;
+}
+.hero .badge {
+  display: inline-block;
+  background: var(--accent);
+  color: var(--dark);
+  padding: 6px 20px;
+  border-radius: 30px;
+  font-weight: 700;
+  font-size: 0.85em;
+  margin-top: 20px;
+  position: relative;
+  z-index: 1;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+
+/* CONTAINER */
+.container {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 0 30px;
+}
+
+/* SECTION */
+.section {
+  padding: 60px 0;
+}
+.section-number {
+  font-family: 'Playfair Display', serif;
+  font-size: 5em;
+  font-weight: 900;
+  color: rgba(42,157,143,0.12);
+  line-height: 1;
+  margin-bottom: -20px;
+}
+.section-title {
+  font-family: 'Playfair Display', serif;
+  font-size: 2.2em;
+  font-weight: 700;
+  color: var(--primary);
+  margin-bottom: 8px;
+}
+.section-subtitle {
+  font-size: 1.1em;
+  color: var(--muted);
+  margin-bottom: 30px;
+  font-weight: 300;
+}
+
+/* TIMELINE */
+.timeline {
+  position: relative;
+  padding-left: 40px;
+  margin: 30px 0;
+}
+.timeline::before {
+  content: '';
+  position: absolute;
+  left: 12px;
+  top: 0;
+  bottom: 0;
+  width: 3px;
+  background: linear-gradient(to bottom, var(--teal), var(--accent), var(--accent2));
+  border-radius: 3px;
+}
+.timeline-item {
+  position: relative;
+  margin-bottom: 35px;
+  padding: 20px 25px;
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 2px 15px rgba(0,0,0,0.06);
+}
+.timeline-item::before {
+  content: '';
+  position: absolute;
+  left: -34px;
+  top: 28px;
+  width: 14px;
+  height: 14px;
+  background: var(--teal);
+  border-radius: 50%;
+  border: 3px solid var(--cream);
+}
+.timeline-date {
+  font-family: 'Fira Code', monospace;
+  font-size: 0.85em;
+  color: var(--teal);
+  font-weight: 700;
+  margin-bottom: 5px;
+}
+.timeline-title {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.3em;
+  font-weight: 700;
+  color: var(--primary);
+  margin-bottom: 8px;
+}
+
+/* CALLOUT BOXES */
+.callout {
+  padding: 25px 30px;
+  border-radius: 12px;
+  margin: 25px 0;
+  position: relative;
+}
+.callout-concept {
+  background: linear-gradient(135deg, #e8f5e9, #c8e6c9);
+  border-left: 5px solid var(--secondary);
+}
+.callout-warning {
+  background: linear-gradient(135deg, #fff3e0, #ffe0b2);
+  border-left: 5px solid var(--orange);
+}
+.callout-exam {
+  background: linear-gradient(135deg, #e3f2fd, #bbdefb);
+  border-left: 5px solid var(--blue);
+}
+.callout-extra {
+  background: linear-gradient(135deg, #fce4ec, #f8bbd0);
+  border-left: 5px solid var(--accent2);
+}
+.callout-title {
+  font-family: 'Playfair Display', serif;
+  font-weight: 700;
+  font-size: 1.1em;
+  margin-bottom: 8px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+/* DIAGRAM SVG STYLES */
+.diagram-container {
+  background: white;
+  border-radius: 16px;
+  padding: 30px;
+  margin: 30px 0;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+  overflow-x: auto;
+}
+.diagram-container svg {
+  display: block;
+  margin: 0 auto;
+  max-width: 100%;
+  height: auto;
+}
+
+/* CARD GRID */
+.card-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 20px;
+  margin: 25px 0;
+}
+.card {
+  background: white;
+  border-radius: 14px;
+  padding: 25px;
+  box-shadow: 0 3px 15px rgba(0,0,0,0.07);
+  transition: transform 0.2s;
+}
+.card:hover { transform: translateY(-3px); }
+.card-icon {
+  font-size: 2em;
+  margin-bottom: 10px;
+}
+.card-title {
+  font-family: 'Playfair Display', serif;
+  font-weight: 700;
+  font-size: 1.1em;
+  color: var(--primary);
+  margin-bottom: 8px;
+}
+
+/* COMPARISON TABLE */
+.comparison-table {
+  width: 100%;
+  border-collapse: separate;
+  border-spacing: 0;
+  margin: 25px 0;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 3px 15px rgba(0,0,0,0.08);
+}
+.comparison-table th {
+  background: var(--primary);
+  color: white;
+  padding: 14px 18px;
+  font-family: 'Playfair Display', serif;
+  font-weight: 700;
+  font-size: 0.95em;
+  text-align: left;
+}
+.comparison-table td {
+  padding: 12px 18px;
+  background: white;
+  border-bottom: 1px solid #eee;
+  font-size: 0.95em;
+}
+.comparison-table tr:nth-child(even) td { background: #f9f9f6; }
+
+/* BIG NUMBER */
+.stat-row {
+  display: flex;
+  gap: 20px;
+  margin: 25px 0;
+  flex-wrap: wrap;
+}
+.stat-box {
+  flex: 1;
+  min-width: 150px;
+  background: white;
+  border-radius: 14px;
+  padding: 25px;
+  text-align: center;
+  box-shadow: 0 3px 15px rgba(0,0,0,0.07);
+}
+.stat-number {
+  font-family: 'Playfair Display', serif;
+  font-size: 2.8em;
+  font-weight: 900;
+  color: var(--teal);
+  line-height: 1;
+}
+.stat-label {
+  font-size: 0.85em;
+  color: var(--muted);
+  margin-top: 6px;
+}
+
+/* SEPARATOR */
+.separator {
+  height: 4px;
+  background: linear-gradient(to right, var(--teal), var(--accent), var(--accent2), var(--yellow));
+  border-radius: 4px;
+  margin: 50px 0;
+}
+
+/* YOUTUBE */
+.youtube-section {
+  background: linear-gradient(135deg, #1a1a2e, #16213e);
+  color: white;
+  border-radius: 16px;
+  padding: 35px;
+  margin: 30px 0;
+}
+.youtube-section h3 {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.5em;
+  margin-bottom: 15px;
+  color: #ff4444;
+}
+.yt-link {
+  display: block;
+  background: rgba(255,255,255,0.08);
+  padding: 15px 20px;
+  border-radius: 10px;
+  margin: 10px 0;
+  color: white;
+  text-decoration: none;
+  transition: background 0.2s;
+  border-left: 4px solid #ff4444;
+}
+.yt-link:hover { background: rgba(255,255,255,0.15); }
+.yt-link .yt-prof {
+  font-weight: 700;
+  color: var(--yellow);
+  font-size: 0.9em;
+}
+.yt-link .yt-title {
+  font-size: 1.05em;
+  margin-top: 3px;
+}
+
+/* MNEMONIC */
+.mnemonic {
+  background: linear-gradient(135deg, var(--accent), var(--orange));
+  color: var(--dark);
+  padding: 25px 30px;
+  border-radius: 14px;
+  margin: 25px 0;
+  font-size: 1.05em;
+}
+.mnemonic strong { font-size: 1.2em; }
+
+/* FLOW ARROWS */
+.flow {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-wrap: wrap;
+  margin: 15px 0;
+  font-weight: 600;
+}
+.flow-item {
+  background: var(--secondary);
+  color: white;
+  padding: 8px 16px;
+  border-radius: 8px;
+  font-size: 0.9em;
+}
+.flow-arrow { color: var(--accent2); font-size: 1.4em; }
+
+/* FOOTER */
+.footer {
+  background: var(--dark);
+  color: rgba(255,255,255,0.7);
+  padding: 40px;
+  text-align: center;
+  font-size: 0.9em;
+}
+
+/* RESPONSIVE */
+@media (max-width: 600px) {
+  .hero h1 { font-size: 2em; }
+  .section-number { font-size: 3em; }
+  .section-title { font-size: 1.6em; }
+  .stat-number { font-size: 2em; }
+  body { font-size: 16px; }
+  .container { padding: 0 18px; }
+}
+
+/* TOC */
+.toc {
+  background: white;
+  border-radius: 16px;
+  padding: 30px 35px;
+  margin: 40px 0;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+}
+.toc h2 {
+  font-family: 'Playfair Display', serif;
+  color: var(--primary);
+  margin-bottom: 15px;
+}
+.toc ol {
+  padding-left: 20px;
+}
+.toc li {
+  padding: 6px 0;
+  font-weight: 600;
+  color: var(--secondary);
+}
+.toc li a {
+  color: var(--secondary);
+  text-decoration: none;
+  transition: color 0.2s;
+}
+.toc li a:hover { color: var(--accent2); }
+
+p { margin-bottom: 14px; }
+strong { color: var(--primary); }
+</style>
+</head>
+<body>
+
+<!-- HERO -->
+<div class="hero">
+  <h1>O Desenvolvimento Industrial do Brasil</h1>
+  <div class="subtitle">Aula Completa para Vestibulares — Do Brasil Colônia à Desindustrialização</div>
+  <div class="badge">Geografia do Brasil — 2º Ano EM</div>
+</div>
+
+<div class="container">
+
+<!-- SUMÁRIO -->
+<div class="toc">
+  <h2>Sumário da Aula</h2>
+  <ol>
+    <li><a href="#intro">Introdução — Por que estudar industrialização?</a></li>
+    <li><a href="#pre">Fase 1 — Brasil Pré-Industrial (até 1930)</a></li>
+    <li><a href="#vargas">Fase 2 — Era Vargas: O 1º Salto Industrial (1930–1953)</a></li>
+    <li><a href="#jk">Fase 3 — JK e Militares: O 2º Salto Industrial (1956–1985)</a></li>
+    <li><a href="#redemo">Fase 4 — Redemocratização: Crise e Desindustrialização (1985+)</a></li>
+    <li><a href="#desconc">Desconcentração Industrial</a></li>
+    <li><a href="#geo">Distribuição Geográfica da Indústria</a></li>
+    <li><a href="#videos">Videoaulas Recomendadas</a></li>
+  </ol>
+</div>
+
+<!-- ===================== INTRODUÇÃO ===================== -->
+<div class="section" id="intro">
+  <div class="section-number">01</div>
+  <div class="section-title">Introdução — Por que este tema é tão cobrado?</div>
+  <div class="section-subtitle">Entendendo o "esqueleto" do conteúdo antes de mergulhar nos detalhes</div>
+
+  <p>Olha, eu vou ser direto: <strong>industrialização brasileira é um dos temas mais cobrados no ENEM, FUVEST, UNICAMP e nos grandes vestibulares</strong>. Ele aparece em questões de Geografia, História e até na Redação. E a razão é simples: entender como o Brasil se industrializou é entender como o país se tornou o que é hoje — com suas desigualdades regionais, sua concentração urbana no Sudeste, seus problemas de infraestrutura e sua posição no comércio global.</p>
+
+  <p>Antes de entrar na história, vamos organizar a mente. A industrialização brasileira pode ser dividida em <strong>4 grandes fases</strong>. Pense nelas como "capítulos" de uma novela:</p>
+
+  <!-- DIAGRAMA VISUAL DAS 4 FASES -->
+  <div class="diagram-container">
+    <svg viewBox="0 0 800 220" xmlns="http://www.w3.org/2000/svg">
+      <!-- Phase boxes -->
+      <rect x="10" y="30" width="175" height="160" rx="14" fill="#e8f5e9" stroke="#2d6a4f" stroke-width="2"/>
+      <rect x="210" y="30" width="175" height="160" rx="14" fill="#fff3e0" stroke="#f4a261" stroke-width="2"/>
+      <rect x="410" y="30" width="175" height="160" rx="14" fill="#e3f2fd" stroke="#264653" stroke-width="2"/>
+      <rect x="610" y="30" width="175" height="160" rx="14" fill="#fce4ec" stroke="#e76f51" stroke-width="2"/>
+      
+      <!-- Phase titles -->
+      <text x="97" y="65" text-anchor="middle" font-family="Playfair Display,serif" font-weight="700" font-size="15" fill="#1a3a2a">Pré-Industrial</text>
+      <text x="297" y="65" text-anchor="middle" font-family="Playfair Display,serif" font-weight="700" font-size="15" fill="#7a4a00">Era Vargas</text>
+      <text x="497" y="65" text-anchor="middle" font-family="Playfair Display,serif" font-weight="700" font-size="15" fill="#264653">JK / Militares</text>
+      <text x="697" y="65" text-anchor="middle" font-family="Playfair Display,serif" font-weight="700" font-size="15" fill="#e76f51">Redemocratização</text>
+      
+      <!-- Dates -->
+      <text x="97" y="88" text-anchor="middle" font-family="Fira Code,monospace" font-size="12" fill="#6b705c">Até ~1930</text>
+      <text x="297" y="88" text-anchor="middle" font-family="Fira Code,monospace" font-size="12" fill="#6b705c">1930–1953</text>
+      <text x="497" y="88" text-anchor="middle" font-family="Fira Code,monospace" font-size="12" fill="#6b705c">1956–1985</text>
+      <text x="697" y="88" text-anchor="middle" font-family="Fira Code,monospace" font-size="12" fill="#6b705c">1985 em diante</text>
+      
+      <!-- Key words -->
+      <text x="97" y="115" text-anchor="middle" font-size="12" fill="#2b2b2b">Café</text>
+      <text x="97" y="133" text-anchor="middle" font-size="12" fill="#2b2b2b">Artesanal</text>
+      <text x="97" y="151" text-anchor="middle" font-size="12" fill="#2b2b2b">Agroexportador</text>
+      
+      <text x="297" y="115" text-anchor="middle" font-size="12" fill="#2b2b2b">Indústria de Base</text>
+      <text x="297" y="133" text-anchor="middle" font-size="12" fill="#2b2b2b">Substituição de</text>
+      <text x="297" y="151" text-anchor="middle" font-size="12" fill="#2b2b2b">Importações</text>
+      <text x="297" y="169" text-anchor="middle" font-size="12" fill="#2b2b2b">CSN, Petrobrás</text>
+      
+      <text x="497" y="115" text-anchor="middle" font-size="12" fill="#2b2b2b">Multinacionais</text>
+      <text x="497" y="133" text-anchor="middle" font-size="12" fill="#2b2b2b">Plano de Metas</text>
+      <text x="497" y="151" text-anchor="middle" font-size="12" fill="#2b2b2b">Bens duráveis</text>
+      <text x="497" y="169" text-anchor="middle" font-size="12" fill="#2b2b2b">Dívida externa</text>
+      
+      <text x="697" y="115" text-anchor="middle" font-size="12" fill="#2b2b2b">Desindustrialização</text>
+      <text x="697" y="133" text-anchor="middle" font-size="12" fill="#2b2b2b">Desconcentração</text>
+      <text x="697" y="151" text-anchor="middle" font-size="12" fill="#2b2b2b">Privatizações</text>
+      <text x="697" y="169" text-anchor="middle" font-size="12" fill="#2b2b2b">Globalização</text>
+      
+      <!-- Arrows -->
+      <polygon points="192,110 205,103 205,117" fill="#2d6a4f"/>
+      <polygon points="392,110 405,103 405,117" fill="#f4a261"/>
+      <polygon points="592,110 605,103 605,117" fill="#264653"/>
+      
+      <!-- Labels above -->
+      <text x="97" y="20" text-anchor="middle" font-family="Playfair Display,serif" font-weight="900" font-size="22" fill="#2a9d8f" opacity="0.4">1</text>
+      <text x="297" y="20" text-anchor="middle" font-family="Playfair Display,serif" font-weight="900" font-size="22" fill="#f4a261" opacity="0.4">2</text>
+      <text x="497" y="20" text-anchor="middle" font-family="Playfair Display,serif" font-weight="900" font-size="22" fill="#264653" opacity="0.4">3</text>
+      <text x="697" y="20" text-anchor="middle" font-family="Playfair Display,serif" font-weight="900" font-size="22" fill="#e76f51" opacity="0.4">4</text>
+    </svg>
+  </div>
+
+  <div class="callout callout-extra">
+    <div class="callout-title">⚡ Conceito-chave para entender TUDO (não estava no PPT — adição para compreensão)</div>
+    <p><strong>Industrialização Tardia:</strong> O Brasil se industrializou MUITO depois dos países europeus (que começaram no século XVIII). Enquanto a Inglaterra já fazia sua Revolução Industrial em 1760, o Brasil ainda era colônia de Portugal — e Portugal PROIBIA a existência de fábricas aqui (Alvará de 1785 de D. Maria I). Isso explica por que chegamos "atrasados" na corrida industrial e por que dependemos tanto de capital e tecnologia estrangeira.</p>
+  </div>
+</div>
+
+<div class="separator"></div>
+
+<!-- ===================== FASE 1: PRÉ-INDUSTRIAL ===================== -->
+<div class="section" id="pre">
+  <div class="section-number">02</div>
+  <div class="section-title">Brasil Pré-Industrial (até o início do séc. XX)</div>
+  <div class="section-subtitle">De colônia agroexportadora aos primeiros lampejos de fábricas</div>
+
+  <p>Até o começo do século XX, o Brasil era essencialmente um <strong>país agrário</strong>. A economia girava em torno da <strong>cafeicultura</strong>, e a indústria que existia era doméstica e artesanal, com raras exceções como a produção naval no Rio de Janeiro e têxteis em Santa Catarina.</p>
+
+  <p>Mas atenção: foi justamente o café que <strong>plantou as sementes</strong> da industrialização! Parece contraditório? Não é. Veja como o café preparou o terreno:</p>
+
+  <!-- DIAGRAMA: CAFÉ → INDÚSTRIA -->
+  <div class="diagram-container">
+    <svg viewBox="0 0 750 380" xmlns="http://www.w3.org/2000/svg">
+      <!-- Central coffee bean -->
+      <ellipse cx="375" cy="60" rx="80" ry="35" fill="#6d4c41" stroke="#3e2723" stroke-width="2"/>
+      <text x="375" y="65" text-anchor="middle" font-family="Playfair Display,serif" font-weight="700" font-size="18" fill="white">CAFÉ ☕</text>
+      
+      <!-- Lines from coffee to factors -->
+      <line x1="300" y1="90" x2="130" y2="155" stroke="#8d6e63" stroke-width="2" stroke-dasharray="6,4"/>
+      <line x1="375" y1="95" x2="375" y2="155" stroke="#8d6e63" stroke-width="2" stroke-dasharray="6,4"/>
+      <line x1="450" y1="90" x2="620" y2="155" stroke="#8d6e63" stroke-width="2" stroke-dasharray="6,4"/>
+      
+      <!-- Three factor boxes -->
+      <rect x="25" y="155" width="210" height="90" rx="12" fill="#fff8e1" stroke="#f9a825" stroke-width="2"/>
+      <text x="130" y="185" text-anchor="middle" font-weight="700" font-size="14" fill="#5d4037">💰 ACÚMULO DE CAPITAL</text>
+      <text x="130" y="205" text-anchor="middle" font-size="12" fill="#2b2b2b">Lucros do café financiaram</text>
+      <text x="130" y="222" text-anchor="middle" font-size="12" fill="#2b2b2b">a compra de máquinas</text>
+      
+      <rect x="270" y="155" width="210" height="90" rx="12" fill="#e8f5e9" stroke="#43a047" stroke-width="2"/>
+      <text x="375" y="185" text-anchor="middle" font-weight="700" font-size="14" fill="#1b5e20">👷 MÃO DE OBRA</text>
+      <text x="375" y="205" text-anchor="middle" font-size="12" fill="#2b2b2b">Abolição + Imigração =</text>
+      <text x="375" y="222" text-anchor="middle" font-size="12" fill="#2b2b2b">trabalhadores assalariados</text>
+      
+      <rect x="515" y="155" width="210" height="90" rx="12" fill="#e3f2fd" stroke="#1e88e5" stroke-width="2"/>
+      <text x="620" y="185" text-anchor="middle" font-weight="700" font-size="14" fill="#0d47a1">🚂 INFRAESTRUTURA</text>
+      <text x="620" y="205" text-anchor="middle" font-size="12" fill="#2b2b2b">Ferrovias e usinas de energia</text>
+      <text x="620" y="222" text-anchor="middle" font-size="12" fill="#2b2b2b">(capital britânico)</text>
+      
+      <!-- Arrow down to result -->
+      <line x1="130" y1="245" x2="375" y2="310" stroke="#2d6a4f" stroke-width="2"/>
+      <line x1="375" y1="245" x2="375" y2="310" stroke="#2d6a4f" stroke-width="2"/>
+      <line x1="620" y1="245" x2="375" y2="310" stroke="#2d6a4f" stroke-width="2"/>
+      <polygon points="375,310 368,298 382,298" fill="#2d6a4f"/>
+      
+      <!-- Result box -->
+      <rect x="225" y="315" width="300" height="55" rx="12" fill="#2d6a4f"/>
+      <text x="375" y="340" text-anchor="middle" font-family="Playfair Display,serif" font-weight="700" font-size="16" fill="white">CONDIÇÕES PARA A</text>
+      <text x="375" y="360" text-anchor="middle" font-family="Playfair Display,serif" font-weight="700" font-size="16" fill="#e9c46a">INDUSTRIALIZAÇÃO 🏭</text>
+    </svg>
+  </div>
+
+  <div class="callout callout-concept">
+    <div class="callout-title">🔑 Destrinchando cada fator:</div>
+    <p><strong>1. Acúmulo de Capital:</strong> Os barões do café ganharam MUITO dinheiro. Quando o café entrou em crise (principalmente após 1929), esse capital acumulado precisava de um novo destino. E a indústria era a alternativa mais promissora.</p>
+    <p><strong>2. Mercado Consumidor + Mão de Obra:</strong> A <strong>abolição da escravatura (1888)</strong> e a <strong>imigração europeia</strong> (italianos, alemães, japoneses) criaram algo que não existia antes: uma massa de <strong>trabalhadores assalariados</strong>. Gente que recebia salário = gente que COMPRA coisas = mercado consumidor!</p>
+    <p><strong>3. Infraestrutura:</strong> Para escoar o café do interior de SP até o porto de Santos, foram construídas <strong>ferrovias</strong> (com capital britânico). Essas mesmas ferrovias depois serviram para transportar matérias-primas e produtos industriais. Além disso, usinas de energia foram instaladas para atender as fazendas — e depois atenderiam as fábricas.</p>
+  </div>
+
+  <p>As primeiras fábricas apareceram entre <strong>1900 e 1920</strong>, concentradas em <strong>São Paulo</strong> (pela localização estratégica como entroncamento ferroviário). Eram principalmente fábricas <strong>têxteis</strong> (tecidos) e de alimentos. Em Santa Catarina e no Rio de Janeiro também surgiram indústrias têxteis nesse período.</p>
+
+  <div class="callout callout-exam">
+    <div class="callout-title">📝 Atenção Vestibular!</div>
+    <p>Questão clássica: <em>"Por que a industrialização se concentrou no Sudeste?"</em> Resposta: por causa da herança da economia cafeeira — capital acumulado, mão de obra imigrante, infraestrutura ferroviária e proximidade com os portos de exportação. Tudo estava ali!</p>
+  </div>
+</div>
+
+<div class="separator"></div>
+
+<!-- ===================== FASE 2: ERA VARGAS ===================== -->
+<div class="section" id="vargas">
+  <div class="section-number">03</div>
+  <div class="section-title">Era Vargas — O 1º Salto Industrial (1930–1953)</div>
+  <div class="section-subtitle">O Estado entra em cena: "Se o mercado não faz, o governo faz!"</div>
+
+  <p>Agora a coisa fica séria. Em <strong>1929</strong>, a economia mundial quebra (a famosa <strong>Crise de 1929</strong>), e o café brasileiro perde seu principal comprador: os EUA. A oligarquia cafeeira, em pânico, começa a direcionar seus investimentos para a <strong>nascente indústria</strong>.</p>
+
+  <p>Mas aqui está o ponto crucial: os empresários privados investiram em <strong>indústrias de bens de consumo</strong> (tecidos, alimentos, coisas "simples"). Para que essas indústrias funcionassem, era preciso <strong>aço, energia, petróleo, minérios</strong> — e ninguém do setor privado tinha dinheiro nem interesse em investir nisso (eram projetos caros e de retorno lento).</p>
+
+  <p><strong>É aí que entra Getúlio Vargas</strong>, com uma ideia revolucionária: o <strong>Estado</strong> vai criar as indústrias de base!</p>
+
+  <div class="card-grid">
+    <div class="card">
+      <div class="card-icon">⚡</div>
+      <div class="card-title">Eletrobrás</div>
+      <p>Setor de Energia — para abastecer as fábricas com eletricidade. Sem energia, nenhuma indústria funciona.</p>
+    </div>
+    <div class="card">
+      <div class="card-icon">⛏️</div>
+      <div class="card-title">Cia Vale do Rio Doce</div>
+      <p>Setor Mineral — extração de minério de ferro, matéria-prima essencial para a siderurgia.</p>
+    </div>
+    <div class="card">
+      <div class="card-icon">🔩</div>
+      <div class="card-title">CSN (Volta Redonda-RJ)</div>
+      <p>Setor Siderúrgico — produção de aço. Sem aço, não se fazem máquinas, pontes, nem carros.</p>
+    </div>
+    <div class="card">
+      <div class="card-icon">🛢️</div>
+      <div class="card-title">Petrobrás</div>
+      <p>Setor de Petróleo — criada em 1953 com o lema "O Petróleo é Nosso". Combustível e matéria-prima petroquímica.</p>
+    </div>
+  </div>
+
+  <div class="callout callout-extra">
+    <div class="callout-title">💡 Conceito adicionado para compreensão (não estava no PPT)</div>
+    <p><strong>Indústria de Base vs. Indústria de Bens de Consumo — qual a diferença?</strong></p>
+    <p>Imagine uma pirâmide: na BASE estão as indústrias que produzem matéria-prima transformada (aço, energia, petróleo, cimento). Essas matérias alimentam o MEIO da pirâmide (bens de capital: máquinas, equipamentos) que, por sua vez, permitem a produção do TOPO (bens de consumo: roupas, alimentos, carros). Vargas construiu a base da pirâmide. JK vai construir o topo.</p>
+  </div>
+
+  <!-- DIAGRAMA PIRÂMIDE INDUSTRIAL -->
+  <div class="diagram-container">
+    <svg viewBox="0 0 700 320" xmlns="http://www.w3.org/2000/svg">
+      <!-- Pyramid -->
+      <polygon points="350,20 550,280 150,280" fill="none" stroke="#2d6a4f" stroke-width="2"/>
+      
+      <!-- Base layer -->
+      <polygon points="210,220 490,220 550,280 150,280" fill="#264653" opacity="0.85"/>
+      <text x="350" y="248" text-anchor="middle" font-weight="700" font-size="15" fill="white">INDÚSTRIAS DE BASE</text>
+      <text x="350" y="268" text-anchor="middle" font-size="12" fill="#e9c46a">Aço, Energia, Petróleo, Minério</text>
+      
+      <!-- Middle layer -->
+      <polygon points="265,140 435,140 490,220 210,220" fill="#2a9d8f" opacity="0.85"/>
+      <text x="350" y="172" text-anchor="middle" font-weight="700" font-size="15" fill="white">BENS DE CAPITAL</text>
+      <text x="350" y="192" text-anchor="middle" font-size="12" fill="#e9c46a">Máquinas, Equipamentos</text>
+      
+      <!-- Top layer -->
+      <polygon points="350,20 435,140 265,140" fill="#e76f51" opacity="0.85"/>
+      <text x="350" y="85" text-anchor="middle" font-weight="700" font-size="14" fill="white">BENS DE</text>
+      <text x="350" y="103" text-anchor="middle" font-weight="700" font-size="14" fill="white">CONSUMO</text>
+      <text x="350" y="122" text-anchor="middle" font-size="11" fill="#fefae0">Roupas, Alimentos, Carros</text>
+      
+      <!-- Annotations -->
+      <text x="85" y="255" text-anchor="middle" font-size="13" fill="#264653" font-weight="700">VARGAS →</text>
+      <text x="620" y="180" text-anchor="middle" font-size="13" fill="#2a9d8f" font-weight="700">← VARGAS +</text>
+      <text x="620" y="197" text-anchor="middle" font-size="13" fill="#2a9d8f" font-weight="700">JK</text>
+      <text x="620" y="90" text-anchor="middle" font-size="13" fill="#e76f51" font-weight="700">← Privado +</text>
+      <text x="620" y="107" text-anchor="middle" font-size="13" fill="#e76f51" font-weight="700">Multinacionais</text>
+    </svg>
+  </div>
+
+  <p>Além de criar as estatais, Vargas também:</p>
+
+  <div class="callout callout-concept">
+    <div class="callout-title">📋 Outras ações de Vargas:</div>
+    <p><strong>Transportes e comunicações:</strong> Investiu em expansão de ferrovias, criou rede de telégrafos e os Correios — fundamentais para integrar o território e escoar a produção.</p>
+    <p><strong>Legislação trabalhista:</strong> Criou a CLT (Consolidação das Leis do Trabalho), estabelecendo salário mínimo, férias, jornada de 8h. Isso FORMALIZOU o trabalhador e fortaleceu o mercado consumidor interno.</p>
+    <p><strong>Restrição à imigração:</strong> Para incentivar a mão de obra NACIONAL e reduzir a dependência de trabalhadores estrangeiros.</p>
+  </div>
+
+  <div class="mnemonic">
+    <strong>🧠 CONCEITO CENTRAL — Decore isso:</strong><br>
+    <strong>Política de SUBSTITUIÇÃO DE IMPORTAÇÕES (PSI)</strong> = O governo buscou PRODUZIR INTERNAMENTE o que antes era importado. Para isso, controlou taxas cambiais e alfandegárias, encarecendo os produtos estrangeiros e protegendo a indústria nacional nascente. É o "vamos fazer aqui dentro" da industrialização brasileira.
+  </div>
+
+  <div class="callout callout-exam">
+    <div class="callout-title">📝 Pegadinha de Vestibular!</div>
+    <p>Muita gente confunde: Vargas NÃO criou a indústria de bens de consumo. Ele criou as <strong>indústrias de BASE</strong>. A indústria de bens de consumo já existia (nasceu com o capital cafeeiro). Vargas criou a ESTRUTURA que permitiu essa indústria crescer.</p>
+  </div>
+</div>
+
+<div class="separator"></div>
+
+<!-- ===================== FASE 3: JK / MILITARES ===================== -->
+<div class="section" id="jk">
+  <div class="section-number">04</div>
+  <div class="section-title">JK e Militares — O 2º Salto Industrial (1956–1985)</div>
+  <div class="section-subtitle">"50 anos em 5" — Quando o Brasil abriu as portas para o mundo (e ficou devendo...)</div>
+
+  <p>Se Vargas construiu as fundações, <strong>Juscelino Kubitschek</strong> ergueu o prédio — mas com dinheiro emprestado do vizinho.</p>
+
+  <p>O grande dilema de JK era: o Brasil já tem aço, energia e petróleo... mas não tem tecnologia para fabricar carros, remédios, eletrônicos. O que fazer? <strong>Importar a indústria estrangeira!</strong> É aqui que entram as <strong>multinacionais</strong>.</p>
+
+  <!-- PLANO DE METAS -->
+  <div class="callout callout-concept">
+    <div class="callout-title">🎯 Plano de Metas de JK (1956–1961)</div>
+    <p>O lema era <strong>"50 anos em 5"</strong>. Os eixos principais:</p>
+    <p><strong>Energia:</strong> Mais usinas hidrelétricas, eletrificação rural.</p>
+    <p><strong>Transportes:</strong> Explosão rodoviária (o Brasil abandonou o trem e abraçou o carro — consequência direta da chegada das montadoras).</p>
+    <p><strong>Indústria de base:</strong> Continuidade ao que Vargas iniciou.</p>
+    <p><strong>Indústria automobilística:</strong> Ford, Volkswagen, GM se instalam no ABC Paulista (Santo André, São Bernardo, São Caetano). Isso muda TUDO — o modelo de transporte do Brasil será rodoviário para sempre.</p>
+    <p><strong>Construção de Brasília:</strong> Nova capital no Planalto Central, iniciando o povoamento do Centro-Oeste.</p>
+  </div>
+
+  <div class="stat-row">
+    <div class="stat-box">
+      <div class="stat-number">30%+</div>
+      <div class="stat-label">do PIB era industrial ao fim deste período</div>
+    </div>
+    <div class="stat-box">
+      <div class="stat-number">5%</div>
+      <div class="stat-label">das exportações eram de manufaturados</div>
+    </div>
+  </div>
+
+  <p>Depois de JK, vieram os <strong>governos militares (1964–1985)</strong>, que deram continuidade ao modelo desenvolvimentista com os <strong>Planos Nacionais de Desenvolvimento (PND I e II)</strong>:</p>
+
+  <div class="comparison-table">
+    <table style="width:100%;border-collapse:separate;border-spacing:0;border-radius:12px;overflow:hidden;box-shadow:0 3px 15px rgba(0,0,0,0.08);">
+      <thead>
+        <tr>
+          <th style="background:#1a3a2a;color:white;padding:14px 18px;font-family:'Playfair Display',serif;">Área</th>
+          <th style="background:#1a3a2a;color:white;padding:14px 18px;font-family:'Playfair Display',serif;">Realizações</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td style="padding:12px 18px;background:white;border-bottom:1px solid #eee;font-weight:700;">Energia</td>
+          <td style="padding:12px 18px;background:white;border-bottom:1px solid #eee;">Usina de Itaipu (hidrelétrica), Usina de Angra dos Reis (nuclear)</td>
+        </tr>
+        <tr>
+          <td style="padding:12px 18px;background:#f9f9f6;border-bottom:1px solid #eee;font-weight:700;">Rodovias</td>
+          <td style="padding:12px 18px;background:#f9f9f6;border-bottom:1px solid #eee;">BR-163, Rodovia Belém-Brasília, Transamazônica — expansão para TODAS as regiões</td>
+        </tr>
+        <tr>
+          <td style="padding:12px 18px;background:white;border-bottom:1px solid #eee;font-weight:700;">Mineração</td>
+          <td style="padding:12px 18px;background:white;border-bottom:1px solid #eee;">Projeto Grande Carajás (PA), Projeto Jari</td>
+        </tr>
+        <tr>
+          <td style="padding:12px 18px;background:#f9f9f6;border-bottom:1px solid #eee;font-weight:700;">Indústria</td>
+          <td style="padding:12px 18px;background:#f9f9f6;border-bottom:1px solid #eee;">Bens de capital, eletrônica pesada, siderurgia</td>
+        </tr>
+        <tr>
+          <td style="padding:12px 18px;background:white;font-weight:700;">Incentivos regionais</td>
+          <td style="padding:12px 18px;background:white;">Criação da SUFRAMA e da Zona Franca de Manaus</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="callout callout-warning">
+    <div class="callout-title">⚠️ O PREÇO DO CRESCIMENTO — A bomba-relógio</div>
+    <p>Tudo isso custou CARO. O governo financiou as obras com <strong>empréstimos em dólar</strong> (dívida externa). Os problemas que vieram:</p>
+    <p><strong>Dívida Externa explode:</strong> O gasto público descontrolado da década de 1970 (a fase da "Marcha Forçada") + a crise global do petróleo (1973 e 1979) fizeram a dívida brasileira disparar.</p>
+    <p><strong>Inflação:</strong> O governo emitia moeda sem parar para pagar as dívidas, causando inflação descontrolada.</p>
+    <p><strong>Década de 1980 = "Década Perdida":</strong> Hiperinflação + juros altos = início da DESINDUSTRIALIZAÇÃO brasileira.</p>
+  </div>
+
+  <div class="callout callout-extra">
+    <div class="callout-title">💡 Contexto adicional (não estava no PPT) — Por que o êxodo rural disparou?</div>
+    <p>A <strong>mecanização do campo</strong> (tratores, colheitadeiras) no período JK/Militar expulsou milhões de camponeses que trabalhavam manualmente. Sem emprego no campo, migraram para as cidades — é o famoso <strong>êxodo rural</strong>. Isso inchou as metrópoles do Sudeste e gerou favelas, desemprego urbano e problemas de infraestrutura que existem até hoje. É um tema que cai direto em questões de urbanização!</p>
+  </div>
+
+  <!-- FLUXO VISUAL -->
+  <div class="mnemonic">
+    <strong>🧠 Resumo em cadeia — grave esta sequência:</strong><br><br>
+    <div class="flow">
+      <span class="flow-item">Capital estrangeiro</span>
+      <span class="flow-arrow">→</span>
+      <span class="flow-item">Multinacionais (carros, remédios)</span>
+      <span class="flow-arrow">→</span>
+      <span class="flow-item">Crescimento rápido</span>
+      <span class="flow-arrow">→</span>
+      <span class="flow-item">Dívida em dólar</span>
+      <span class="flow-arrow">→</span>
+      <span class="flow-item">Crise do Petróleo</span>
+      <span class="flow-arrow">→</span>
+      <span class="flow-item">Hiperinflação</span>
+      <span class="flow-arrow">→</span>
+      <span class="flow-item">DESINDUSTRIALIZAÇÃO</span>
+    </div>
+  </div>
+</div>
+
+<div class="separator"></div>
+
+<!-- ===================== FASE 4: REDEMOCRATIZAÇÃO ===================== -->
+<div class="section" id="redemo">
+  <div class="section-number">05</div>
+  <div class="section-title">Redemocratização — Crise e Desindustrialização (1985+)</div>
+  <div class="section-subtitle">O Brasil abre suas fronteiras... e a indústria sofre</div>
+
+  <p>A partir de 1985, com o fim da ditadura militar, o Brasil enfrenta uma tempestade perfeita: <strong>crise econômica interna + globalização externa</strong>.</p>
+
+  <p><strong>O que aconteceu por dentro:</strong> hiperinflação (preços subindo TODOS os dias), juros altíssimos, e uma indústria estagnada que não evoluiu tecnologicamente.</p>
+
+  <p><strong>O que aconteceu por fora:</strong> o mundo estava se globalizando. Organismos internacionais como o <strong>Banco Mundial, FMI e OMC</strong> pressionavam o Brasil a <strong>abrir suas fronteiras comerciais</strong> e <strong>desregulamentar mercados</strong>. Resultado? Uma enxurrada de produtos importados (principalmente da <strong>China</strong> e outros países asiáticos) invadiu o mercado brasileiro.</p>
+
+  <div class="callout callout-extra">
+    <div class="callout-title">💡 Conceito adicionado — O que é Neoliberalismo? (não estava no PPT)</div>
+    <p>A "cartilha" imposta pelo FMI e Banco Mundial é chamada de <strong>Consenso de Washington</strong> — um conjunto de políticas neoliberais que incluía: privatizações, abertura comercial, redução de gastos públicos e desregulamentação. O Brasil seguiu essa cartilha especialmente nos anos 1990 (governos Collor e FHC).</p>
+  </div>
+
+  <p><strong>A indústria brasileira não aguentou a concorrência</strong> porque tinha:</p>
+
+  <div class="card-grid">
+    <div class="card">
+      <div class="card-icon">🔧</div>
+      <div class="card-title">Tecnologia defasada</div>
+      <p>Fábricas com máquinas antigas, processos ultrapassados. Não competia com a eficiência asiática.</p>
+    </div>
+    <div class="card">
+      <div class="card-icon">📉</div>
+      <div class="card-title">Baixa produtividade</div>
+      <p>Menor capacidade de produção por real investido em comparação com os concorrentes internacionais.</p>
+    </div>
+    <div class="card">
+      <div class="card-icon">💸</div>
+      <div class="card-title">Custo Brasil</div>
+      <p>Restrições fiscais, crédito caro, infraestrutura deficiente, burocracia — tudo encarecendo a produção.</p>
+    </div>
+  </div>
+
+  <p><strong>Consequências:</strong></p>
+
+  <!-- DIAGRAMA: CONSEQUÊNCIAS DA DESINDUSTRIALIZAÇÃO -->
+  <div class="diagram-container">
+    <svg viewBox="0 0 700 300" xmlns="http://www.w3.org/2000/svg">
+      <!-- Central problem -->
+      <rect x="225" y="10" width="250" height="50" rx="12" fill="#e76f51"/>
+      <text x="350" y="40" text-anchor="middle" font-family="Playfair Display,serif" font-weight="700" font-size="15" fill="white">CRISE + GLOBALIZAÇÃO</text>
+      
+      <!-- Arrows down -->
+      <line x1="280" y1="60" x2="120" y2="100" stroke="#e76f51" stroke-width="2"/>
+      <line x1="350" y1="60" x2="350" y2="100" stroke="#e76f51" stroke-width="2"/>
+      <line x1="420" y1="60" x2="580" y2="100" stroke="#e76f51" stroke-width="2"/>
+      
+      <!-- Three consequence boxes -->
+      <rect x="15" y="100" width="210" height="80" rx="10" fill="#fff3e0" stroke="#f4a261" stroke-width="2"/>
+      <text x="120" y="128" text-anchor="middle" font-weight="700" font-size="13" fill="#e65100">Fechamento de fábricas</text>
+      <text x="120" y="148" text-anchor="middle" font-size="11.5" fill="#2b2b2b">Reestruturação, terceirização,</text>
+      <text x="120" y="164" text-anchor="middle" font-size="11.5" fill="#2b2b2b">automação e demissões em massa</text>
+      
+      <rect x="245" y="100" width="210" height="80" rx="10" fill="#fce4ec" stroke="#e76f51" stroke-width="2"/>
+      <text x="350" y="128" text-anchor="middle" font-weight="700" font-size="13" fill="#b71c1c">Privatizações</text>
+      <text x="350" y="148" text-anchor="middle" font-size="11.5" fill="#2b2b2b">Empresas estatais vendidas:</text>
+      <text x="350" y="164" text-anchor="middle" font-size="11.5" fill="#2b2b2b">Vale, Telebrás, siderúrgicas</text>
+      
+      <rect x="475" y="100" width="210" height="80" rx="10" fill="#e8eaf6" stroke="#3f51b5" stroke-width="2"/>
+      <text x="580" y="128" text-anchor="middle" font-weight="700" font-size="13" fill="#1a237e">Desconcentração</text>
+      <text x="580" y="148" text-anchor="middle" font-size="11.5" fill="#2b2b2b">Fábricas saem de SP/RJ</text>
+      <text x="580" y="164" text-anchor="middle" font-size="11.5" fill="#2b2b2b">para regiões mais baratas</text>
+      
+      <!-- Final result -->
+      <line x1="120" y1="180" x2="350" y2="230" stroke="#b71c1c" stroke-width="1.5"/>
+      <line x1="350" y1="180" x2="350" y2="230" stroke="#b71c1c" stroke-width="1.5"/>
+      <line x1="580" y1="180" x2="350" y2="230" stroke="#b71c1c" stroke-width="1.5"/>
+      
+      <rect x="175" y="230" width="350" height="55" rx="12" fill="#b71c1c"/>
+      <text x="350" y="255" text-anchor="middle" font-family="Playfair Display,serif" font-weight="700" font-size="16" fill="white">DESINDUSTRIALIZAÇÃO</text>
+      <text x="350" y="275" text-anchor="middle" font-size="12" fill="#ffcdd2">Queda da indústria no PIB: de 30% para ~10%</text>
+    </svg>
+  </div>
+
+  <div class="callout callout-concept">
+    <div class="callout-title">🔑 Dois conceitos que CAEM no vestibular:</div>
+    <p><strong>DESINDUSTRIALIZAÇÃO:</strong> É a redução da participação da indústria no PIB + queda da PEA (População Economicamente Ativa) empregada na indústria. A indústria saiu de ~30% do PIB para cerca de 10%. NÃO significa que as fábricas sumiram, mas que outros setores (serviços e agronegócio) cresceram mais.</p>
+    <p><strong>DESCONCENTRAÇÃO INDUSTRIAL:</strong> É o deslocamento das fábricas do eixo RJ-SP para outras regiões do Brasil (interior de SP, Sul, Nordeste, Centro-Oeste). Veremos isso em detalhe na próxima seção!</p>
+  </div>
+</div>
+
+<div class="separator"></div>
+
+<!-- ===================== DESCONCENTRAÇÃO INDUSTRIAL ===================== -->
+<div class="section" id="desconc">
+  <div class="section-number">06</div>
+  <div class="section-title">Desconcentração Industrial</div>
+  <div class="section-subtitle">Por que as fábricas fugiram de São Paulo?</div>
+
+  <p><strong>Definição:</strong> Processo de dispersão da atividade industrial do eixo RJ-SP (e de algumas metrópoles como Porto Alegre, Recife, BH) para regiões mais interiorizadas (interior do RS, PR, MG, SP, estado de GO etc.).</p>
+
+  <p>Para entender a desconcentração, pense assim: você é dono de uma fábrica em São Paulo. Seus custos estão altíssimos. Aí você descobre que no interior do Paraná, o terreno é 10x mais barato, os funcionários aceitam salários menores, o governador oferece isenção de impostos, e já tem rodovia nova para escoar sua produção. O que você faz? <strong>Vai embora de SP.</strong></p>
+
+  <!-- DIAGRAMA: PUSH & PULL -->
+  <div class="diagram-container">
+    <svg viewBox="0 0 750 300" xmlns="http://www.w3.org/2000/svg">
+      <!-- Left side - Push factors -->
+      <rect x="15" y="20" width="320" height="260" rx="14" fill="#ffebee" stroke="#e53935" stroke-width="2"/>
+      <text x="175" y="55" text-anchor="middle" font-family="Playfair Display,serif" font-weight="700" font-size="17" fill="#b71c1c">❌ SAEM das metrópoles</text>
+      <text x="175" y="80" text-anchor="middle" font-size="12" fill="#c62828">(fatores de repulsão)</text>
+      
+      <text x="40" y="115" font-size="13.5" fill="#2b2b2b" font-weight="600">💰 Impostos altos</text>
+      <text x="40" y="145" font-size="13.5" fill="#2b2b2b" font-weight="600">🏘️ Terrenos caríssimos</text>
+      <text x="40" y="175" font-size="13.5" fill="#2b2b2b" font-weight="600">🚗 Congestionamento / caos urbano</text>
+      <text x="40" y="205" font-size="13.5" fill="#2b2b2b" font-weight="600">✊ Sindicatos fortes = salários altos</text>
+      <text x="40" y="235" font-size="13.5" fill="#2b2b2b" font-weight="600">📈 Custo de vida elevado</text>
+      <text x="40" y="265" font-size="13.5" fill="#2b2b2b" font-weight="600">🏭 "Deseconomias de aglomeração"</text>
+      
+      <!-- Arrow -->
+      <polygon points="350,150 370,135 370,165" fill="#2d6a4f"/>
+      <line x1="340" y1="150" x2="370" y2="150" stroke="#2d6a4f" stroke-width="3"/>
+      
+      <!-- Right side - Pull factors -->
+      <rect x="385" y="20" width="350" height="260" rx="14" fill="#e8f5e9" stroke="#43a047" stroke-width="2"/>
+      <text x="560" y="55" text-anchor="middle" font-family="Playfair Display,serif" font-weight="700" font-size="17" fill="#1b5e20">✅ VÃO para o interior</text>
+      <text x="560" y="80" text-anchor="middle" font-size="12" fill="#2e7d32">(fatores de atração)</text>
+      
+      <text x="410" y="115" font-size="13.5" fill="#2b2b2b" font-weight="600">💲 Terrenos e aluguéis baratos</text>
+      <text x="410" y="145" font-size="13.5" fill="#2b2b2b" font-weight="600">🏷️ Isenção fiscal (Guerra Fiscal)</text>
+      <text x="410" y="175" font-size="13.5" fill="#2b2b2b" font-weight="600">🤝 Sindicatos fracos, salários menores</text>
+      <text x="410" y="205" font-size="13.5" fill="#2b2b2b" font-weight="600">🛣️ Novas rodovias e ferrovias</text>
+      <text x="410" y="235" font-size="13.5" fill="#2b2b2b" font-weight="600">⚡ Infraestrutura recém-construída</text>
+      <text x="410" y="265" font-size="13.5" fill="#2b2b2b" font-weight="600">📍 Próximo a rodovias de escoamento</text>
+    </svg>
+  </div>
+
+  <div class="callout callout-warning">
+    <div class="callout-title">⚠️ GUERRA FISCAL — conceito importantíssimo!</div>
+    <p>Com a <strong>Constituição de 1988</strong>, os <strong>Estados</strong> (e não mais a União) passaram a aplicar os principais impostos sobre a indústria (ICMS, IPI). Isso criou a chamada <strong>Guerra Fiscal</strong>: estados competem entre si para atrair fábricas, oferecendo <strong>redução de impostos e facilidades</strong>. O Ceará oferece isenção? O Goiás cobre! Resultado: as fábricas se espalham pelo Brasil.</p>
+  </div>
+
+  <p><strong>Consequências da desconcentração:</strong></p>
+
+  <div class="stat-row">
+    <div class="stat-box">
+      <div class="stat-number" style="font-size:1.8em;">-50%</div>
+      <div class="stat-label">Queda da participação industrial da RMSP e RMRJ entre 1970 e 2000 (caíram para 21% e 8%)</div>
+    </div>
+    <div class="stat-box">
+      <div class="stat-number" style="font-size:1.8em;">📈</div>
+      <div class="stat-label">Crescimento de cidades médias do interior (desconcentração urbana)</div>
+    </div>
+    <div class="stat-box">
+      <div class="stat-number" style="font-size:1.8em;">📉</div>
+      <div class="stat-label">Redução do crescimento das grandes metrópoles</div>
+    </div>
+  </div>
+
+  <div class="callout callout-exam">
+    <div class="callout-title">📝 Cuidado com a pegadinha!</div>
+    <p><strong>Desconcentração ≠ Descentralização.</strong> O Sudeste AINDA concentra mais de 55% da indústria. A desconcentração é relativa — São Paulo perdeu participação, mas continua sendo o maior polo industrial do país. Não houve uma distribuição igualitária!</p>
+  </div>
+</div>
+
+<div class="separator"></div>
+
+<!-- ===================== DISTRIBUIÇÃO GEOGRÁFICA ===================== -->
+<div class="section" id="geo">
+  <div class="section-number">07</div>
+  <div class="section-title">Distribuição Geográfica da Indústria Brasileira</div>
+  <div class="section-subtitle">Onde fica o quê — um mapa mental da indústria no Brasil</div>
+
+  <!-- SUDESTE -->
+  <div style="background:linear-gradient(135deg, #e8f5e9, #c8e6c9);border-radius:16px;padding:30px;margin:25px 0;">
+    <h3 style="font-family:'Playfair Display',serif;font-size:1.6em;color:#1a3a2a;margin-bottom:15px;">🏭 Região SUDESTE (55-60% da produção industrial)</h3>
+    <p>É o coração industrial do Brasil. Apresenta a maior <strong>complexidade e diversificação</strong>, com indústrias que vão do setor de base ao de ponta. Concentra os setores mais dinâmicos ligados ao mercado global.</p>
+
+    <div class="card-grid">
+      <div class="card">
+        <div class="card-icon">🔩</div>
+        <div class="card-title">Siderurgia</div>
+        <p><strong>Usiminas, ArcelorMittal, Gerdau</strong> (MG/SP), <strong>CSN, Votorantim</strong> (RJ). Produção de aço para mercado interno + exportação (China e Japão). Escoamento pela Estrada de Ferro Vitória-Minas e Porto de Tubarão (ES).</p>
+      </div>
+      <div class="card">
+        <div class="card-icon">🚗</div>
+        <div class="card-title">Automotiva</div>
+        <p>Chegou nos anos 1960. Estabelecimento inicial no <strong>ABC Paulista</strong> (entre SP e Santos). Depois expandiu para interior de SP, RJ e MG. Abastece mercado interno + Mercosul. Sofre crises desde os anos 1990.</p>
+      </div>
+      <div class="card">
+        <div class="card-icon">🛢️</div>
+        <div class="card-title">Petroquímica</div>
+        <p>Monopólio histórico da Petrobrás. Polos petroquímicos: <strong>Capuava (SP)</strong> e <strong>Duque de Caxias (RJ)</strong>. Transforma petróleo refinado em derivados para mercado interno.</p>
+      </div>
+      <div class="card">
+        <div class="card-icon">🌾</div>
+        <div class="card-title">Agroindústria</div>
+        <p><strong>Etanol:</strong> Norte de SP. <strong>Suco de laranja:</strong> NE de SP. <strong>Carnes/embutidos:</strong> Oeste Paulista, Triângulo Mineiro. <strong>Laticínios:</strong> Sul de MG. <strong>Celulose e papel:</strong> Leste de MG e ES.</p>
+      </div>
+      <div class="card">
+        <div class="card-icon">💻</div>
+        <div class="card-title">Tecnopolos</div>
+        <p>Centros urbanos com universidades + centros de pesquisa + indústrias de ponta. <strong>São José dos Campos</strong> (ITA, INPE — aeronáutica/aeroespacial), <strong>Campinas</strong> (Unicamp — informática/eletrônica), <strong>SP, RJ, BH</strong> (USP, UFRJ, UFMG — incubadoras).</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- OUTRAS REGIÕES -->
+  <div style="background:linear-gradient(135deg, #fff3e0, #ffe0b2);border-radius:16px;padding:30px;margin:25px 0;">
+    <h3 style="font-family:'Playfair Display',serif;font-size:1.6em;color:#7a4a00;margin-bottom:15px;">🗺️ Demais Regiões (S, NE, CO e N — 30% da produção, mas com MAIOR crescimento relativo)</h3>
+    <p>Com algumas exceções, tendem a ter indústrias mais <strong>tradicionais</strong> voltadas ao mercado interno.</p>
+
+    <div class="card-grid">
+      <div class="card">
+        <div class="card-icon">👕</div>
+        <div class="card-title">Têxtil (S e NE)</div>
+        <p>Cadeia: algodão/lã/sintéticos → tecidos → vestuário. Atende mercado interno. Sofre MUITO com a concorrência chinesa, o que precariza relações de trabalho (especialmente no Nordeste).</p>
+      </div>
+      <div class="card">
+        <div class="card-icon">🐔</div>
+        <div class="card-title">Agroindústria (S, CO, NE)</div>
+        <p><strong>Avicultura/Suinocultura:</strong> SC, PR, GO. <strong>Tabaco:</strong> RS, SC. <strong>Frigoríficos:</strong> MS, GO, MT, BA, TO. <strong>Vinho:</strong> PE, BA, RS, SC. Funciona como polo motriz do desenvolvimento regional.</p>
+      </div>
+    </div>
+
+    <h4 style="font-family:'Playfair Display',serif;margin-top:20px;margin-bottom:10px;color:#7a4a00;">Destaques dos setores dinâmicos:</h4>
+    <div class="card-grid">
+      <div class="card">
+        <div class="card-icon">📺</div>
+        <div class="card-title">Zona Franca de Manaus</div>
+        <p>Polo <strong>eletroeletrônico e automotivo</strong>. Criada pela SUFRAMA para desenvolver a Amazônia. Empresas recebem incentivos fiscais enormes para se instalar lá.</p>
+      </div>
+      <div class="card">
+        <div class="card-icon">👟</div>
+        <div class="card-title">Pecém (CE)</div>
+        <p>Parque Industrial e Portuário. <strong>Polo calçadista</strong> — muitas fábricas migraram do RS para cá pela mão de obra mais barata.</p>
+      </div>
+      <div class="card">
+        <div class="card-icon">💊</div>
+        <div class="card-title">Anápolis (GO)</div>
+        <p>Complexo <strong>Farmacêutico e de Química Fina</strong>. Um dos maiores polos de genéricos do país.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="callout callout-extra">
+    <div class="callout-title">💡 Conceito adicionado — O que é um Tecnopolo? (não estava detalhado no PPT)</div>
+    <p>Um <strong>tecnopolo</strong> é um centro urbano que reúne, no mesmo espaço: universidades de ponta + centros de pesquisa + empresas de alta tecnologia. A ideia é que a proximidade entre pesquisa acadêmica e indústria gera <strong>inovação</strong>. É como o Vale do Silício nos EUA, mas em escala menor. No Brasil, São José dos Campos é o mais famoso — lá ficam o ITA (Instituto Tecnológico de Aeronáutica), o INPE (Instituto Nacional de Pesquisas Espaciais) e a Embraer.</p>
+  </div>
+
+  <div class="callout callout-exam">
+    <div class="callout-title">📝 Macete para a prova — Tipos de indústria por região</div>
+    <p><strong>Sudeste:</strong> Diversificada, de base a ponta (siderurgia, automotiva, petroquímica, tecnopolos).</p>
+    <p><strong>Sul:</strong> Agroindústria (aves, suínos, tabaco) + têxtil.</p>
+    <p><strong>Nordeste:</strong> Têxtil (precarizada) + polo petroquímico de Camaçari (BA) + calçadista em Pecém (CE).</p>
+    <p><strong>Centro-Oeste:</strong> Agroindústria (frigoríficos) + Anápolis (farmacêutico).</p>
+    <p><strong>Norte:</strong> Zona Franca de Manaus (eletrônicos) + mineração (Carajás).</p>
+  </div>
+</div>
+
+<div class="separator"></div>
+
+<!-- ===================== SÍNTESE VISUAL: LINHA DO TEMPO ===================== -->
+<div class="section">
+  <div class="section-number">08</div>
+  <div class="section-title">Linha do Tempo — Visão Geral</div>
+  <div class="section-subtitle">Tudo que você precisa lembrar numa única sequência</div>
+
+  <div class="timeline">
+    <div class="timeline-item">
+      <div class="timeline-date">ATÉ 1930</div>
+      <div class="timeline-title">Brasil Pré-Industrial</div>
+      <p>Economia agroexportadora (café). Indústria artesanal e doméstica. Café gera: capital, mão de obra imigrante, ferrovias e energia.</p>
+    </div>
+
+    <div class="timeline-item">
+      <div class="timeline-date">1930–1953</div>
+      <div class="timeline-title">Era Vargas — 1º Salto</div>
+      <p>Crise de 29 → capital migra para a indústria. Estado cria indústrias de base: CSN, Petrobrás, Vale, Eletrobrás. Política de Substituição de Importações (PSI). CLT e legislação trabalhista.</p>
+    </div>
+
+    <div class="timeline-item">
+      <div class="timeline-date">1956–1961</div>
+      <div class="timeline-title">JK — Plano de Metas</div>
+      <p>"50 anos em 5". Abertura ao capital estrangeiro. Multinacionais automobilísticas (ABC Paulista). Construção de Brasília. Explosão rodoviária. Êxodo rural. Dependência do capital externo.</p>
+    </div>
+
+    <div class="timeline-item">
+      <div class="timeline-date">1964–1985</div>
+      <div class="timeline-title">Regime Militar — PND I e II</div>
+      <p>Grandes obras: Itaipu, Angra, Transamazônica, Carajás. SUFRAMA/ZFM. Expansão para todas as regiões. "Marcha Forçada" → dívida explode. Indústria = 30% do PIB.</p>
+    </div>
+
+    <div class="timeline-item" style="border-left:4px solid #e76f51;">
+      <div class="timeline-date" style="color:#e76f51;">1985 EM DIANTE</div>
+      <div class="timeline-title">Redemocratização</div>
+      <p>Hiperinflação + globalização. Abertura comercial. Invasão de importados (China). Fechamento de fábricas, privatizações (Vale, Telebrás). Desindustrialização (indústria cai para ~10% PIB). Desconcentração industrial via Guerra Fiscal.</p>
+    </div>
+  </div>
+</div>
+
+<div class="separator"></div>
+
+<!-- ===================== VÍDEOS RECOMENDADOS ===================== -->
+<div class="section" id="videos">
+  <div class="section-number">09</div>
+  <div class="section-title">Videoaulas Recomendadas no YouTube</div>
+  <div class="section-subtitle">Professores favoritos dos vestibulandos para complementar seu estudo</div>
+
+  <div class="youtube-section">
+    <h3>🎬 Geografia — Industrialização Brasileira</h3>
+    
+    <a class="yt-link" href="https://www.youtube.com/results?search_query=Claudio+Hansen+industrializa%C3%A7%C3%A3o+brasileira" target="_blank">
+      <div class="yt-prof">Prof. Cláudio Hansen (Descomplica)</div>
+      <div class="yt-title">A evolução da atividade industrial no Brasil: de Vargas a Geisel — Aula completa sobre todos os períodos com a didática inconfundível do Hansen. Busque no canal do Descomplica.</div>
+    </a>
+
+    <a class="yt-link" href="https://www.youtube.com/results?search_query=Ricardo+Marc%C3%ADlio+industrializa%C3%A7%C3%A3o+brasileira" target="_blank">
+      <div class="yt-prof">Prof. Ricardo Marcílio</div>
+      <div class="yt-title">O processo de industrialização brasileiro e a conjuntura atual — Aula completa cobrindo do período colonial à desindustrialização. Canal com +500 mil inscritos focado em vestibular.</div>
+    </a>
+
+    <a class="yt-link" href="https://www.youtube.com/results?search_query=terra+negra+industrializa%C3%A7%C3%A3o+brasileira" target="_blank">
+      <div class="yt-prof">Canal Terra Negra (Coletivo de Professores)</div>
+      <div class="yt-title">Aulas filmadas "em campo" com expedições reais. Coletivo de professores de Ciências Humanas com conteúdo gratuito. Busque "industrialização" ou "espaço industrial brasileiro".</div>
+    </a>
+
+    <a class="yt-link" href="https://www.youtube.com/results?search_query=professor+silvester+industrializa%C3%A7%C3%A3o+desconcentra%C3%A7%C3%A3o+industrial" target="_blank">
+      <div class="yt-prof">Prof. Silvester (Geografando)</div>
+      <div class="yt-title">Aulas sobre desconcentração industrial e espaço industrial brasileiro — didática jovem e direta, com vídeos que vão direto ao ponto. Canal crescente entre vestibulandos.</div>
+    </a>
+  </div>
+
+  <div class="youtube-section" style="background:linear-gradient(135deg, #2d1b69, #1a1a4e);">
+    <h3 style="color:#a78bfa;">📚 História — Complemento essencial</h3>
+    <p style="opacity:0.8;margin-bottom:15px;">A industrialização brasileira cruza com conteúdos de História. Esses professores cobrem os governos de Vargas, JK e os militares com profundidade:</p>
+    
+    <a class="yt-link" href="https://www.youtube.com/results?search_query=Se+Liga+Nessa+Hist%C3%B3ria+Era+Vargas+industrializa%C3%A7%C3%A3o" target="_blank">
+      <div class="yt-prof">Se Liga Nessa História (Prof. Walter Solla)</div>
+      <div class="yt-title">Era Vargas, Governo JK e Ditadura Militar — aulas encenadas e divertidas. Formado pela USP, Walter Solla é referência em História do Brasil para vestibular.</div>
+    </a>
+
+    <a class="yt-link" href="https://www.youtube.com/results?search_query=Hist%C3%B3ria+Online+governo+Vargas+JK+industrializa%C3%A7%C3%A3o" target="_blank">
+      <div class="yt-prof">História Online</div>
+      <div class="yt-title">Professores de cursinhos de SP. Aulões completos sobre Era Vargas, JK, Ditadura Militar com foco em FUVEST e UNICAMP.</div>
+    </a>
+  </div>
+
+  <div class="youtube-section" style="background:linear-gradient(135deg, #1a3a2a, #264653);">
+    <h3 style="color:#2a9d8f;">🧩 Interdisciplinar — Atualidades e Economia</h3>
+    
+    <a class="yt-link" href="https://www.youtube.com/results?search_query=Paulo+Gala+desindustrializa%C3%A7%C3%A3o+brasileira" target="_blank">
+      <div class="yt-prof">Prof. Paulo Gala (Economia)</div>
+      <div class="yt-title">Desindustrialização brasileira — Economista com canal no YouTube que explica com dados e gráficos por que o Brasil está perdendo sua indústria. Excelente para aprofundar a parte econômica.</div>
+    </a>
+  </div>
+</div>
+
+<div class="separator"></div>
+
+<!-- RESUMO FINAL -->
+<div class="section">
+  <div class="section-title" style="text-align:center;">Resumo Final — Os 7 conceitos que MAIS caem</div>
+  
+  <div class="mnemonic" style="background:linear-gradient(135deg, #264653, #1a3a2a);color:white;">
+    <strong style="color:#e9c46a;font-size:1.3em;">🧠 Grave estes conceitos:</strong><br><br>
+    <p><strong style="color:#2a9d8f;">1. Industrialização Tardia</strong> — O Brasil se industrializou com atraso em relação à Europa (colônia + escravatura + proibição de fábricas).</p>
+    <p><strong style="color:#2a9d8f;">2. Substituição de Importações (PSI)</strong> — Política de produzir internamente o que era importado (Vargas → JK → Militares).</p>
+    <p><strong style="color:#2a9d8f;">3. Indústria de Base</strong> — Aço, energia, petróleo, minério. Criadas pelo Estado (Vargas).</p>
+    <p><strong style="color:#2a9d8f;">4. Dependência do Capital Estrangeiro</strong> — JK abriu para multinacionais. Crescimento à custa de dívida externa.</p>
+    <p><strong style="color:#2a9d8f;">5. Desindustrialização</strong> — Queda da participação da indústria no PIB (~30% → ~10%) a partir dos anos 1980.</p>
+    <p><strong style="color:#2a9d8f;">6. Desconcentração Industrial</strong> — Fábricas saem do eixo RJ-SP para o interior e outras regiões. Guerra Fiscal entre estados.</p>
+    <p><strong style="color:#2a9d8f;">7. Guerra Fiscal</strong> — Estados disputam fábricas oferecendo isenção de impostos (pós-Constituição de 1988).</p>
+  </div>
+</div>
+
+</div><!-- end container -->
+
+<div class="footer">
+  <p><strong>Aula criada com base no material do Prof. Ribeiro</strong></p>
+  <p>Conteúdos adicionais foram sinalizados ao longo do texto para complementar a compreensão.</p>
+  <p style="margin-top:10px;opacity:0.6;">Geografia do Brasil — Industrialização Brasileira — 2º Ano do Ensino Médio</p>
+</div>
+
+</body>
+</html>
